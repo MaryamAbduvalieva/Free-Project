@@ -1,0 +1,269 @@
+@mixin outline-btn($width, $bd-color, $bd-radius) {
+  transition: all 0.3s ease;
+  border: 1px solid $bd-color;
+  border-radius: $bd-radius;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  width: $width;
+  color: white;
+  @if $bd-color == $white {
+    &:hover {
+      background-color: $white;
+      color: $black;
+      svg path {
+        transition: 0.3s ease;
+        fill: $black;
+      }
+    }
+  } @else if $bd-color == $black {
+    &:hover {
+      background-color: $black;
+      color: $white;
+      svg path {
+        transition: 0.3s ease;
+        fill: $white;
+      }
+    }
+  }
+}
+@mixin solid-btn($bg-color, $color) {
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 23px 47px;
+  background-color: $bg-color;
+  color: $color;
+  @if $bg-color == $white {
+    transition: 0.5s ease;
+    &:hover {
+      background-color: $blue;
+      border-color: $blue;
+      color: $white;
+      transition: 0.5s ease;
+    }
+    &:active {
+      transition: 0.5s ease;
+      border-color: #193a87;
+      background-color: #193a87;
+    }
+  } @else if $bg-color == $blue {
+    transition: 0.5s ease;
+
+    &:hover {
+      transition: 0.5s ease;
+      border-color: rgb(182, 182, 182);
+
+      background-color: rgb(159, 159, 159);
+      color: $black;
+    }
+    &:active {
+      transition: 0.3s ease;
+      border-color: rgb(159, 159, 159);
+      background-color: rgb(159, 159, 159);
+    }
+  }
+}
+
+@mixin outline-btn-second($width, $height, $bd-color, $bd-radius, $color) {
+  border: 1px solid $bd-color;
+  border-radius: $bd-radius;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $height;
+  width: $width;
+  color: $color;
+  cursor: pointer;
+  @if $bd-color == $black {
+    transition: 0.5s ease;
+    &:hover {
+      transition: 0.5s ease;
+      border-color: $blue;
+      background-color: $blue;
+      color: $white;
+      transition: 0.5s ease;
+    }
+    &:active {
+      transition: 0.5s ease;
+      border-color: #193a87;
+      background-color: #193a87;
+    }
+  } @else if $bd-color == $blue {
+    transition: 0.5s ease;
+
+    &:hover {
+      transition: 0.5s ease;
+      border-color: $blue;
+      background-color: $blue;
+      color: $white;
+      box-shadow: 0px 0px 18px 1px $grey;
+    }
+    &:active {
+      transition: 0.5s ease;
+      border-color: darken($blue, 10%);
+      background-color: darken($blue, 10%);
+    }
+  }
+}
+
+.regular-button {
+  @include outline-btn(204px, $white, 15px);
+}
+
+.circle-button {
+  @include outline-btn(36px, $white, 50%);
+}
+.circle-button-burger {
+  @include outline-btn(36px, $black, 50%);
+}
+.buttons-container {
+  display: flex;
+  gap: 23px;
+}
+
+@include xs {
+  .header-buttons {
+    &-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+      gap: 20px;
+    }
+    &-main {
+      @include solid-btn($white, $black);
+      font: 400 normal 15px/1.4 "20 Kopeek";
+    }
+  }
+  .portfolio-btn {
+    background-color: $white;
+    @include outline-btn-second(231px, 50px, $black, 40px, $black);
+    font: 400 normal 18px/1.4 "20 Kopeek";
+  }
+  .portfolio-blue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 119px;
+    &-btn {
+      @include outline-btn-second(214px, 61px, $blue, 40px, $white);
+      background-color: $blue;
+      font: 400 normal 20px/1.1 "20 Kopeek";
+    }
+  }
+  .form-btn {
+    @include outline-btn-second(215px, 50px, $blue, 40px, $white);
+    background-color: $blue;
+    font: 400 normal 15px/1.4 "20 Kopeek";
+    margin-top: 31px;
+  }
+}
+@include sm {
+  .header-buttons {
+    &-container {
+      display: flex;
+      flex-direction: row;
+      margin-top: 25px;
+      gap: 35px;
+    }
+    &-main {
+      // @include solid-btn($white, $black);
+      font: 400 normal 15px/1.4 "20 Kopeek";
+      padding: 0 47px;
+
+      height: 50px;
+    }
+  }
+  .portfolio-blue {
+    margin-bottom: 89px;
+  }
+  .form-btn {
+    margin-top: 30px;
+  }
+}
+
+@include md {
+  .header-buttons {
+    &-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 78px;
+    }
+    &-main {
+      // @include solid-btn($white, $black);
+      font: 400 normal 16px/1.4 "20 Kopeek";
+      margin-bottom: 0;
+
+      height: 60px;
+    }
+  }
+  .portfolio-btn {
+    @include outline-btn-second(231px, 60px, $black, 40px, $black);
+    font: 400 normal 18px/1.4 "20 Kopeek";
+  }
+  .portfolio-blue {
+    margin-bottom: 120px;
+    &-btn {
+      @include outline-btn-second(214px, 68px, $blue, 40px, $white);
+    }
+  }
+  .form-btn {
+    @include outline-btn-second(213px, 60px, $blue, 40px, $white);
+    font: 400 normal 16px/1.4 "20 Kopeek";
+  }
+}
+
+@include lg {
+  .header-buttons {
+    &-container {
+      display: flex;
+      flex-direction: row;
+      margin-top: 45px;
+      gap: 30px;
+    }
+    &-main {
+      // @include solid-btn($white, $black);
+      font: 400 normal 16px/1.4 "20 Kopeek";
+      height: 71px;
+    }
+  }
+}
+@include xl {
+  .header-buttons {
+    &-container {
+      display: flex;
+      margin-top: 55px;
+      gap: 20px;
+    }
+    &-main {
+      // @include solid-btn($white, $black);
+      font: 400 normal 18px/25px "20 Kopeek";
+    }
+  }
+
+  .portfolio-btn {
+    @include outline-btn-second(231px, 71px, $black, 40px, $black);
+    font: 400 normal 18px/1.4 "20 Kopeek";
+  }
+  .portfolio-blue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 123px;
+    padding-right: 25px;
+
+    &-btn {
+      @include outline-btn-second(250px, 75px, $blue, 40px, $white);
+      font: 400 normal 26px/1.1 "20 Kopeek";
+    }
+  }
+  .form {
+    &-btn {
+      @include outline-btn-second(228px, 71px, $blue, 40px, $white);
+      font: 400 normal 18px/1.4 "20 Kopeek";
+      margin-top: 0px;
+    }
+  }
+}
