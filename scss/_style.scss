@@ -32,7 +32,7 @@ html {
   }
 
   .header {
-    background-image: url(/assets/images/bg_image_360.png);
+    background-image: url(/assets/images/bg_header_360.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 640px;
@@ -82,7 +82,7 @@ html {
         top: 33px;
         right: 28px;
         z-index: 100;
-        content: url(/assets/images/burger_close.png);
+        content: url(/assets/images/burger_close.svg);
         transition: all 0.3s ease;
         cursor: pointer;
         &:hover {
@@ -559,7 +559,7 @@ html {
     align-self: center;
   }
   .header {
-    background-image: url(/assets/images/bg_image_576.png);
+    background-image: url(/assets/images/bg_header_576.jpeg);
     height: 496px;
   }
   .header-title {
@@ -856,7 +856,7 @@ html {
   }
 
   .header {
-    background-image: url(/assets/images/bg_image_768.png);
+    background-image: url(/assets/images/bg_header_768.jpeg);
     background-size: cover;
     height: 1024px;
   }
@@ -1106,7 +1106,8 @@ html {
 
   .guarantee {
     display: block;
-    background: url(/assets/images/guarantee_768.jpg) no-repeat center 0 / cover;
+    background: url(/assets/images/guarantee-section-768.jpg) no-repeat center 0 /
+      cover;
     background-size: cover;
     height: 703px;
     color: $white;
@@ -1198,7 +1199,7 @@ html {
   }
   .header {
     height: 768px;
-    background-image: url(/assets/images/bg_image_992.png);
+    background-image: url(/assets/images/bg_header_992.jpeg);
     &-text {
       margin-top: 180px;
     }
@@ -1537,8 +1538,8 @@ html {
     }
   }
   .guarantee {
-    background: url(/assets/images/guarantee_992.jpeg) no-repeat center 0 /
-      cover;
+    background: url(/assets/images/guarantee-sec-bg-img-992.jpg) no-repeat
+      center 0 / cover;
     background-size: cover;
     height: 750px;
 
@@ -1652,8 +1653,8 @@ html {
   .header {
     height: 945px;
 
-    background: url(/assets/images/bg_header.png) no-repeat center 0 / contain,
-      url(/assets/images/background_header-repeat.png) repeat center 0 / contain;
+    background: url(/assets/images/bg_header.jpeg) no-repeat center 0 / contain,
+      url(/assets/images/bg_header-repeat.jpeg) repeat center 0 / contain;
   }
 
   .header-title {
@@ -1931,7 +1932,7 @@ html {
     }
   }
   .guarantee {
-    background: url(/assets/images/guarantee_1200.jpeg) no-repeat center 0 /
+    background: url(/assets/images/guarantee-sec-bg-img.jpg) no-repeat center 0 /
       contain;
     height: 957px;
 
